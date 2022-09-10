@@ -4,6 +4,9 @@ This is a repo where I write about things I learn and things that I would like
 to make reference to. I am also putting it on GitHub because I thing people can
 benefit from it.
 
+You can preview the live site on GitHub pages
+[here](https://officialkingsley.github.io/tutorials/)
+
 ## What tutorials am I showing
 
 ---
