@@ -55,11 +55,23 @@ Below lists some of the most used file management commands
 | `mv file1 file2` | In Linux there is no rename command as such. Hence mv moves/renames the file1 to file2. |
 | `rm -i filename` | Asks you before every file removal for confirmation. **IF YOU ARE A NEW USER TO LINUX COMMAND LINE, YOU SHOULD ALWAYS USE** rm -i. You can specify multiple files. |
 | `rm -R dir-name` | Will remove the directory dir-name recursively. |
-| `rm -rf dir-name` | Will remove the directory dir recursively, ignoring non-existent files and will never prompt for anything. **BE CAREFUL USING THIS COMMAND!** You can specify multiple directories. |
+| `rm -rf dir-name` | Delete a non-empty directory (i.e. contains files and/or other directories): Will remove the directory dir recursively, ignoring non-existent files and will never prompt for anything. **BE CAREFUL USING THIS COMMAND!** You can specify multiple directories. |
 | `rmdir dir-name` | Will remove the directory dir-name, if it's empty. This command can only remove empty directories. |
 | `mkdir dir-name` | Create a directory dir-name. |
 | `mkdir -p dir-name/dir-name` | Create a directory hierarchy. Create parent directories as needed, if they don't exist. You can specify multiple directories. |
 | `touch filename` | Create a file filename, if it doesn't exist, otherwise change the timestamp of the file to current time. |
+
+## Working with files
+
+| Command | Utility |
+| ------- | ------- |
+| `cat filename` | View the contents of a file: |
+| `less filename` | View the content of a file with pager (one screenful at a time): |
+| `head filename` | View the first several lines of a file: |
+| `tail filename` | View the last several lines of a file: |
+| `vi filename` | Edit a file: |
+| `mv filename dirname` | Move a file into a directory (folder) |
+| `rm filename` | Removes (or Deletes) the file |
 
 ## File/directory permissions and groups
 
