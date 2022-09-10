@@ -10,11 +10,11 @@ x86_64 x86_64 GNU/Linux
 
 As per man page here few more options
 
-Usage: `uname [OPTION]...`
+> Usage: `uname [OPTION]...`
+>
+> Print certain system information.
 
-Print certain system information.
-
-- With no OPTION, same as -s.
+- With no OPTION, same as `-s`.
 - `-a`, `--all` print all information, in the following order, except omit -p and -i if unknown:
 - `-s`, `--kernel-name` print the kernel name
 - `-n`, `--nodename` print the network node hostname
