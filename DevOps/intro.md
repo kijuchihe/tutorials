@@ -1,4 +1,14 @@
-# What is DevOps
+---
+title: Introduction to DevOps
+---
+
+<title>
+Introduction to DevOps
+</title>
+
+# Introduction to DevOps
+
+## What is DevOps
 
 DevOps, a term that we hear more and more in enterprises with phrases such as
 "We do DevOps" or "We use DevOps", is the contraction of the words Development
