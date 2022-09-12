@@ -1,4 +1,7 @@
 # Welcome To Kmavi Tutorials
 
-- [Linux Shortcuts](./linux/shortcuts.md)
-- [DevOps](./devops/index.md)
+## Tutorials List
+
+- [Algorithms](./algorithms/index.md)
+- [Linux](./linux/index.md)
+- [DevOps](./dev-ops/index.md)
