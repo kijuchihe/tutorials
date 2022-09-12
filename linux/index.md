@@ -1,3 +1,8 @@
 # Linux Tutorial
 
-Let's Look at some [linux shortcuts](./shortcuts.md)
+## Table Of Content
+
+- [Linux Shortcuts](./shortcuts.md)
+- [Basic Utilities](./basic-utilities.md)
+- [Working With Files](./file-management-commands.md)
+- [Kernel Info](./getting-kernel-info.md)
