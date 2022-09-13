@@ -8,3 +8,4 @@ For now, this is just the site on github. However, later on, we intend to make a
 - [Algorithms](./algorithms/index.md)
 - [Linux](./linux/index.md)
 - [DevOps](./dev-ops/index.md)
+- [Chemistry](./chemistry/index.md)
