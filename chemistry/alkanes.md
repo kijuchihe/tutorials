@@ -5,6 +5,7 @@ These are aliphatic hydrocarbons (organic compounds ) with the general molecular
 $$
 C_nH_{2n-2}
 $$
+
 Where $n≥1.$
 
 They are `SATURATED` hydrocarbons. They are also known as `PARAFFINS` (meaning little affinity). They are relatively less reactive compared to their unsaturated counterparts.
@@ -64,19 +65,23 @@ PHYSICAL PROPERTIES OF ALKANES
 
 CHEMICAL PROPERTIES OF ALKANES
 
-1. Combustion: All alkanes undergo combustion to form carbon (IV) oxide and water.
-$CnH_{2n+2} + (3n+1)O_2 → nCO_2 + (n+1)H_2O$
-2. Substitution reaction: This reaction is common to all saturated compounds. It can be defined as the direct displacement of an atom or group of atoms.
-A. Halogenation: This reaction is between halogens and alkanes. It is a typical substitution reaction. This reaction occurs in three stages
-     a. Chain initiation
-     b. Chain propagation
-     c. Chain termination
-Methane undergoes halogenation reaction with fluorine, chlorine and bromine. It does not undergo halogenation with iodine.
-The halogenation of all higher alkanes takes place at slower rates that that of methane. The halogenation reaction can only take place in the presence of light (sunlight) and never in the dark. It is therefore a photocatalytic reaction.
-3. Nitration of alkanes: The vapour phase nitration of alkanes using trioxonitrate (V) acid takes place at 150⁰C to 400⁰C to produce Nitroalkanes.
-USES OF ALKANES
-1. Methane is used as a fuel either alone or when combined with other gases.
-2. Methane is used industrially to produce hydrogen
-3. Trichloromethane also known as Chloroform which is a derivative of methane is used in the laboratory to preserve specimen
-4. Chloroform is also used as an anaesthetic.
-5. Tetrachloromethane is an important solvent used in dry cleaning
+- Combustion: All alkanes undergo combustion to form carbon (IV) oxide and water.
+$$
+CnH_{2n+2} + (3n+1)O_2 → nCO_2 + (n+1)H_2O
+$$
+- Substitution reaction: This reaction is common to all saturated compounds. It can be defined as the direct displacement of an atom or group of atoms
+  - Halogenation: This reaction is between halogens and alkanes. It is a typical substitution reaction. This reaction occurs in three stages
+    - Chain initiation
+    - Chain propagation
+    - Chain termination
+  - Methane undergoes halogenation reaction with fluorine, chlorine and bromine. It does not undergo halogenation with iodine. The halogenation of all higher alkanes takes place at slower rates that that of methane. The halogenation reaction can only take place in the presence of light (sunlight) and never in the dark. It is therefore a photocatalytic reaction.
+
+- Nitration of alkanes: The vapour phase nitration of alkanes using trioxonitrate (V) acid takes place at 150⁰C to 400⁰C to produce Nitroalkanes.
+
+## USES OF ALKANES
+
+- Methane is used as a fuel either alone or when combined with other gases.
+- Methane is used industrially to produce hydrogen
+- Trichloromethane also known as Chloroform which is a derivative of methane is used in the laboratory to preserve specimen
+- Chloroform is also used as an anaesthetic.
+- Tetrachloromethane is an important solvent used in dry cleaning
