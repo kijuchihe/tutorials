@@ -1,7 +1,7 @@
 # Creating a Custom User In Django
 
 There are situations where you may want to add extra features to the already
-built user model in django
+built user model in django or you would like to create a completely new user model
 
 > In the models.py, we create the `User` model and the User model manager
 > `UserManager` (for managing the model and adding functionality to it)
@@ -65,11 +65,12 @@ recognize this user. It replaces the built-in username field for whatever you
 designate. In this case, we decided to opt for an EmailField but you can also
 consider using a phone number.
 
-> What should you choose? Most of my projects, I still opt for the default
-> Django User Model (aka not customizing it) with the username field. Some
-> projects require an email / password for authentication. Some require a phone
-> number / password for authentication. Some use a one-time password. Above
-> shows you that you can be incredibly flexible with Django.
+```py
+class MyUser(AbstractBaseUser):
+    identifier = models.CharField(max_length=40, unique=True)
+    ...
+    USERNAME_FIELD = 'identifier'
+```
 
 ```py
 from django.db import models
@@ -144,16 +145,16 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-#### Accessing the created User
+## Accessing the created User
 
-##### Normal Way
+### Normal Way
 
 ```py
 from django.contrib.auth import get_user_model
 User = get_user_model()
 ```
 
-##### But what about User foreign keys? At some point you'll be faced with this situation:
+### But what about User foreign keys? At some point you'll be faced with this situation
 
 ```py
 from django.db import models
@@ -174,7 +175,7 @@ class SomeModel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 ```
 
-### Creating forms for update
+## Creating forms for update
 
 > In forms.py
 
@@ -270,7 +271,7 @@ class UserAdminChangeForm(forms.ModelForm):
         return self.initial["password"]
 ```
 
-### Updating the admin panel to have the features
+## Updating the admin panel to have the features
 
 ```py
 from django.contrib import admin

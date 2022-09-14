@@ -1,6 +1,6 @@
 # Authenticating a User
 
-### Logging In
+## Logging In
 
 ```py
 from django.
@@ -21,7 +21,7 @@ def loginUser(request):
         return redirect()
 ```
 
-### Logging Out
+## Logging Out
 
 ```py
 from django.
@@ -34,7 +34,7 @@ def logoutUser(request):
 ```
 
 > The logout function doesn't throw any error if the user wasn't logged in
-
+>
 > When you call `logout()`, the session data for the current request is
 > completely cleaned out. All existing data is removed. This is to prevent
 > another person from using the same web browser to log in and have access to
