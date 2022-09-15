@@ -1,7 +1,8 @@
 # Creating a Custom User In Django
 
 There are situations where you may want to add extra features to the already
-built user model in django or you would like to create a completely new user model
+built user model in django or you would like to create a completely new user
+model
 
 > In the models.py, we create the `User` model and the User model manager
 > `UserManager` (for managing the model and adding functionality to it)
@@ -316,3 +317,13 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(User, UserAdmin)
 ```
+
+> Just so you know, these fieldsets are like the sections that you see in the
+> django-admin page
+>
+> Its value is a tuple which contains other tuples
+>
+> The tuples it contains have the syntaxt
+> `("Section Title", {"fields": ("tuple", "of", "fields")})`
+>
+> If you don't want a section title, the value passed should be `None`

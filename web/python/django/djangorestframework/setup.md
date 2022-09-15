@@ -20,45 +20,52 @@ REST_FRAMEWORK = {
 }
 ```
 
-### Routes
+## Routes
 
 There are steps that need to be taken when setting up the routes
 
-- Serializer: This refers to the details or types of details that will be sent
-  about a particular model. For example if we are going to be serving the users,
-  and we just want to send the usernames as responses when a get request is made
-  to the url
+### Serializer
 
-  ```py
-  from rest_framework import serializers
+This refers to the details or types of details that will be sent about a
+particular model. For example if we are going to be serving the users, and we
+just want to send the usernames as responses when a get request is made to the
+url
 
-
-  # Serializers define the API representation.
-  class UserSerializer(serializers.HyperlinkedModelSerializer):
-      class Meta:
-          model = User
-          fields = ("username")
-  ```
-
-- Viewset: This refers to how you want the response to look. Here you pass in
-  the actual data(queryset) and then the details of what you want (serializer)
-
-  ```py
-  from rest_framework import routers, serializers, viewsets
+```py
+from rest_framework import serializers
 
 
-  # ViewSets define the view behavior.
-  class UserViewSet(viewsets.ModelViewSet):
-      queryset = User.objects.all()
-      serializer_class = UserSerializer
-  ```
+# Serializers define the API representation.
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ("username")
+```
 
-- Routing: This, as the name implies, refers to the routing system of the api
-  ```py
-  # Routers provide an easy way of automatically determining the URL conf.
-  router = routers.DefaultRouter()
-  router.register(r"users", UserViewSet)
-  ```
+### Viewset
+
+This refers to how you want the response to look. Here you pass in the actual
+data(queryset) and then the details of what you want (serializer)
+
+```py
+from rest_framework import routers, serializers, viewsets
+
+
+# ViewSets define the view behavior.
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+```
+
+### Routing
+
+This, as the name implies, refers to the routing system of the api
+
+```py
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r"users", UserViewSet)
+```
 
 After all that, we specify the base route for the router in the urlpatterns
 
