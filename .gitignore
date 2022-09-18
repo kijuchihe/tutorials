@@ -7,3 +7,12 @@ docker/docker-compose-basics.md
 docker/how-tos-2.md
 docker/how-tos-3.md
 docker/some.md
+**/djangorestframework/mixins.md
+**/djangorestframework/pagination.md
+**/djangorestframework/serializers.md
+**/djangorestframework/authentication.md
+**/djangorestframework/custom-authentication.md
+**/djangorestframework/filters.md
+**/djangorestframework/routers.md
+**/djangorestframework/token-authentication.md
+**/djangorestframework/serializers.md
