@@ -4,8 +4,10 @@
 
 REST framework introduces a `Request` object that extends the regular
 `HttpRequest`, and provides more flexible request parsing. The core
-functionality of the `Request` object is the `request.data` attribute, which is
-similar to `request.POST`, but more useful for working with Web APIs.
+functionality of the `Request` object is the `request.data` attribute. That
+means that instead of doing request.POST or request.GET and things like that we
+just use request.data as we'll see., which is similar to `request.POST`, but
+more useful for working with Web APIs.
 
 ```py
 request.POST # Only handles form data. Only works for 'POST' method.
@@ -42,8 +44,8 @@ receive `Request` instances in your view, and adding context to `Response`
 objects so that content negotiation can be performed.
 
 The wrappers also provide behaviour such as returning 405 Method Not Allowed
-responses when appropriate, and handling any ParseError exceptions that occur
-when accessing request.data with malformed input.
+responses when appropriate, and handling any `ParseError` exceptions that occur
+when accessing `request.data` with malformed input.
 
 Pulling it all together Okay, let's go ahead and start using these new
 components to refactor our views slightly.
@@ -51,101 +53,107 @@ components to refactor our views slightly.
 ```py
 from rest_framework import status
 from rest_framework.decorators import api_view
-from rest_framework.response import Response from snippets.models import Snippet
-from snippets.serializers import SnippetSerializer
+from rest_framework.response import Response
+from posts.models import Post
+from posts.serializers import PostSerializer
 
+
+# Here we use the api_view
 @api_view(['GET', 'POST'])
-def snippet_list(request):
-    """ List all code
-    snippets, or create a new snippet.
+def post_list(request):
+    """
+    List all code
+    posts, or create a new post.
     """
     if request.method == 'GET':
-        snippets = Snippet.objects.all()
-        serializer = SnippetSerializer(snippets, many=True)
+        posts = Post.objects.all()
+        serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
+        # Notice that we're using the Response object from the rest_framework
 
     elif request.method == 'POST':
-        serializer = SnippetSerializer(data=request.data)
+        serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 ```
 
-Our instance view is an improvement over the previous example. It's a little
-more concise, and the code now feels very similar to if we were working with the
-Forms API. We're also using named status codes, which makes the response
-meanings more obvious.
+Now you will notice that the instance view is an improvement over the previous
+example. It's a little more concise (brief). We're also using named status
+codes, which makes the response meanings more obvious.
 
-Here is the view for an individual snippet, in the views.py module.
+Here is the view for an individual post, in the views.py module.
 
 ```py
 @api_view(['GET', 'PUT', 'DELETE'])
-def snippet_detail(request, pk):
-    """ Retrieve, update or delete a code snippet.
+def post_detail(request, pk):
+    """ Retrieve, update or delete a code post.
     """
     try:
-        snippet = Snippet.objects.get(pk=pk)
-    except Snippet.DoesNotExist:
+        post = post.objects.get(pk=pk)
+    except post.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = SnippetSerializer(snippet)
+        serializer = PostSerializer(post)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = SnippetSerializer(snippet, data=request.data)
+        serializer = PostSerializer(post, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        snippet.delete()
+        post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 ```
 
-This should all feel very familiar - it is not a lot different from working with
-regular Django views.
+As you can see, just a few changes have been made
 
-Notice that we're no longer explicitly tying our requests or responses to a
-given content type.
-
+Remember that in the last tutorial we did something like
+`data = JSONParser().parse(request)`: notice that we're no longer explicitly
+tying our requests or responses to a given content type. This is because
 `request.data` can handle incoming json requests, but it can also handle other
 formats.
 
 Similarly we're returning `response` objects with data, but allowing REST
 framework to render the response into the correct content type for us.
 
-Adding optional format suffixes to our URLs To take advantage of the fact that
-our responses are no longer hardwired to a single content type let's add support
-for format suffixes to our API endpoints. Using format suffixes gives us URLs
-that explicitly refer to a given format, and means our API will be able to
-handle URLs such as `http://example.com/api/items/4.json.`
+## Adding optional format suffixes to our URLs
+
+One beauty about djangorestframework is that you can also explicitly telling
+what type of data should be served. The way you do that is by adding support for
+format suffixes to our API endpoints. Using format suffixes gives us URLs that
+explicitly refer to a given format, and means our API will be able to handle
+URLs such as `http://example.com/api/items/4.json.`
 
 Start by adding a format keyword argument to both of the views, like so.
 
 ```py
-def snippet_list(request, format=None):
+def post_list(request, format=None):
 ```
 
 > and
 
 ```py
-def snippet_detail(request, pk, format=None):
+def post_detail(request, pk, format=None):
 ```
 
-Now update the `snippets/urls.py` file slightly, to append a set of
-`format_suffix_patterns` in addition to the existing URLs.
+Now in the `posts/urls.py` file, you'll need to extension support to the urls by
+using the `format_suffix_patterns` and wrapping it around the urlpatterns. It
+can be imported from `rest_framework.urpatterns`
 
 ```py
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
-from snippets import views
+from posts import views
 
 urlpatterns = [
-    path('snippets/', views.snippet_list),
-    path('snippets/<int:pk>/', views.snippet_detail),
+    path('posts/', views.post_list),
+    path('posts/<int:pk>/', views.post_detail),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
@@ -157,7 +165,7 @@ simple, clean way of referring to a specific format.
 ## POST using form data
 
 ```sh
-http --form POST http://127.0.0.1:8000/snippets/ code="print(123)"
+http --form POST http://127.0.0.1:8000/posts/ code="print(123)"
 
 {
     "id": 3,
@@ -172,7 +180,7 @@ http --form POST http://127.0.0.1:8000/snippets/ code="print(123)"
 ## POST using JSON
 
 ```sh
-http --json POST http://127.0.0.1:8000/snippets/ code="print(456)"
+http --json POST http://127.0.0.1:8000/posts/ code="print(456)"
 
 {
     "id": 4,
@@ -186,12 +194,14 @@ http --json POST http://127.0.0.1:8000/snippets/ code="print(456)"
 ```
 
 Now go and open the API in a web browser, by visiting
-<http://127.0.0.1:8000/snippets/>.
+<http://127.0.0.1:8000/posts/>.
 
-Browsability Because the API chooses the content type of the response based on
-the client request, it will, by default, return an HTML-formatted representation
-of the resource when that resource is requested by a web browser. This allows
-for the API to return a fully web-browsable HTML representation.
+## Browsability
+
+Because the API chooses the content type of the response based on the client
+request, it will, by default, return an HTML-formatted representation of the
+resource when that resource is requested by a web browser. This allows for the
+API to return a fully web-browsable HTML representation.
 
 Having a web-browsable API is a huge usability win, and makes developing and
 using your API much easier. It also dramatically lowers the barrier-to-entry for

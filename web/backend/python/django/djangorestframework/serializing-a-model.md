@@ -5,44 +5,41 @@ data types understandable by javascript and front-end frameworks. Serializers
 also provide deserialization, allowing parsed data to be converted back into
 complex types, after first validating the incoming data.
 
-## Model
+When creating a serializer, you also pass in the fields that you want to be
+serialized/deserialized
+
+## Using and Inheritting from the `Serializer` class
+
+The Serializer class comes with some already built in
+
+### Model
 
 ```py
 from django.db import models
-from pygments.lexers import get_all_lexers
-from pygments.styles import get_all_styles
-
-LEXERS = [item for item in get_all_lexers() if item[1]]
-LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
-STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
 
-class Snippet(models.Model):
+class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')
-    code = models.TextField()
-    linenos = models.BooleanField(default=False)
-    language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
-    style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
+    text = models.TextField()
+    author = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['created']
 ```
 
-## Serializer
+### Serializer
 
 ```py
 from rest_framework import serializers
-from snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
+from posts.models import Post
 
 
-class SnippetSerializer(serializers.Serializer):
+class PostSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     title = serializers.CharField(required=False, allow_blank=True, max_length=100)
-    code = serializers.CharField(style={'base_template': 'textarea.html'})
-    linenos = serializers.BooleanField(required=False)
-    language = serializers.ChoiceField(choices=LANGUAGE_CHOICES, default='python')
-    style = serializers.ChoiceField(choices=STYLE_CHOICES, default='friendly')
+    text = serializers.CharField(style={'base_template': 'textarea.html'})
+    author = serializers.PrimaryKeyRelatedField(read_onlu=True)
 
     def create(self, validated_data):
         """
@@ -55,53 +52,54 @@ class SnippetSerializer(serializers.Serializer):
         Update and return an existing `Snippet` instance, given the validated data.
         """
         instance.title = validated_data.get('title', instance.title)
-        instance.code = validated_data.get('code', instance.code)
-        instance.linenos = validated_data.get('linenos', instance.linenos)
-        instance.language = validated_data.get('language', instance.language)
-        instance.style = validated_data.get('style', instance.style)
+        instance.text = validated_data.get('text', instance.text)
         instance.save()
         return instance
 ```
 
 A `Serializer` class is very similar to a Django `Form` class, and includes
-similar validation flags on the various fields, such as `required`, `max_length`
-and `default`.
+similar validation flags or on the various fields, such as `required`,
+`max_length` and `default`.
 
-The field flags can also control how the serializer should be displayed in
-certain circumstances, such as when rendering to HTML. The
-`{'base_template': 'textarea.html'}` flag above assigned to the code property is
-equivalent to using `widget=widgets.Textarea` on a Django Form class. This is
-particularly useful for controlling how the browsable API should be displayed.
+The `field flags` or `arguments` can also tell how the serializer should be
+displayed in some cases, like when rendering to HTML. The
+`{'base_template': 'textarea.html'}` flag above assigned to the `code` property
+is equivalent to setting `widgets.Textarea` on a `widget` property on a Django
+Form class. This can be very useful when trying to control how the browsable API
+should be displayed (like in what format it should be displayed)
 
-## Examples
+### Examples
+
+> **In the views.py of the posts app,**
+
+The problem with this is that you have to do alot of setup yourself when using
+the serializer model
 
 ```py
 import io
-from snippets.models import Snippet
-from snippets.serializers import SnippetSerializer
+from posts.models import Post
+from .posts import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 
-snippet1 = Snippet(code='foo = "bar"\n')
-snippet1.save()
+post1 = Post(title="Hello", text="World", author='1')
+post1.save()
 # When we call the .save() method, either the create() or update() methods is called
 # Those two operations define the flow of the serializers
 
-snippet2 = Snippet(code='print("hello, world")\n')
-snippet2.save()
+post1 = Post(title="Title 2", text="Some random text", author='1')
+post2.save()
 
 # We pass in the model that we want to serialize to the serializers
 
-serializer = SnippetSerializer(snippet1)
+serializer = SnippetSerializer(post2)
+# This will serialize the data (i.e. change it into other forms)
 print(serializer.data)
+# This will print out the data
 
-# {'id': 2, 'title': '', 'code': 'print("hello, world")\n', 'linenos': False, 'language': 'python', 'style': 'friendly'}
-# The serializer compiles it to native python code
-
-# Now to render that,
+# Now to render that, and specify
 content = JSONRenderer().render(serializer.data)
 print(content)
-# b'{"id": 2, "title": "", "code": "print(\\"hello, world\\")\\n", "linenos": false, "language": "python", "style": "friendly"}'
 
 # As I said, a serializer can convert data to different data types and string types.
 # Now to convert it back to normal python format
