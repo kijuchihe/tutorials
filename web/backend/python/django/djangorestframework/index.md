@@ -5,7 +5,7 @@ In this tutorial, we will be learning about the Django REST Framework
 ## Table Of Content
 
 - [Introduction](./intro.md)
-- [Setting Up And Quick Start](./setup.md)
+- [Setting Up And Quick Start](./quickstart.md)
 - [Serializing A Model](./serializing-a-model.md)
 - [Custom Serializers](./custom-serializers.md)
 - [Requests and Responses](./requests-and-responses.md)

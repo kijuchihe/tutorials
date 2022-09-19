@@ -248,6 +248,8 @@ HTTP/1.1 200 OK
 Or directly through the browser, by going to the URL
 <http://127.0.0.1:8000/users/>
 
+![Quick Start Image](./quickstart.png)
+
 If you're working through the browser, make sure to login using the control in
 the top right corner.
 
