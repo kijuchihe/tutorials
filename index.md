@@ -11,6 +11,7 @@ is just the site on github. However, later on, we intend to make an actual site.
 - [DevOps](./dev-ops/index.md)
 - [Django](./web/backend/python/django/index.md)
 - [Docker](./docker/index.md)
+- [HTML](./programming-languages/html/index.md)
 - [JavaScript](./programming-languages/javascript/index.md)
 - [Linux](./linux/index.md)
 - [Python](./programming-languages/python/index.md)
