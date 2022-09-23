@@ -14,4 +14,6 @@ is just the site on github. However, later on, we intend to make an actual site.
 - [HTML](./programming-languages/html/index.md)
 - [JavaScript](./programming-languages/javascript/index.md)
 - [Linux](./linux/index.md)
+- [Next.js](./web/frontend/js/next/next/index.md)
 - [Python](./programming-languages/python/index.md)
+- [Python Data Structures](./data-structures/python/index.md)

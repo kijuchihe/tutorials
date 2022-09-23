@@ -99,8 +99,11 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
-Notice that we're using hyperlinked relations in this case with HyperlinkedModelSerializer. You can also use primary key and various other relationships, but hyperlinking is good RESTful design.
 ```
+
+Notice that we're using hyperlinked relations in this case with
+HyperlinkedModelSerializer. You can also use primary key and various other
+relationships, but hyperlinking is good RESTful design.
 
 ## Views
 
