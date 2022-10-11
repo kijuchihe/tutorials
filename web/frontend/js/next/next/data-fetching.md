@@ -9,7 +9,7 @@ props. There are three separate methods that can be used
 
 ## getStaticProps
 
-Fetch data at build time
+This function is used to fetch data at build time
 
 ```jsx
 export const getStaticProps = async (context) => {
@@ -49,14 +49,12 @@ This will get the data at the time of request is made. For example when you
 visit a page, the function will then be called at the request: making page load
 slower.
 
-Using this method means you have to run your applications in `lamda` functions
+Using this method means you have to run your applications in `lambda` functions
 
 ```jsx
 import { useRouter } from "next/router";
 
 const article = ({ article }) => {
-  // const router = useRouter();
-  // const { id } = router.query;
   return (
     <>
       This is an article of {article.id}

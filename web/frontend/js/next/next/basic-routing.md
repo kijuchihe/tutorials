@@ -10,10 +10,10 @@ to that route in your browser, it opens that component
 Now, incase you'll like to have links with parameters, let's say:
 `'/articles/3'`, we can do this in next easily
 
-In the pages folder, create an `articles` folder. In the articles folder,
-createn a parameter folder with the syntaz `[parameter_name]`. For example if
-the parameter is the id, you'll create a folder named `[id]` in the `articles`
-directory. In that [id] folder, createn an `index.js`. This index.js will be the
+In the pages folder, create an `articles` folder. In the articles folder, create
+a parameter folder with the syntax `[parameter_name]`. For example if the
+parameter is the id, you'll create a folder named `[id]` in the `articles`
+directory. In that [id] folder, create an `index.js`. This index.js will be the
 page that will be shown when you navigate to a route like `'/articles/[id]'`
 like `'/articles/4'`
 

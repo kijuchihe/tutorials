@@ -16,3 +16,4 @@ docker/some.md
 **/djangorestframework/routers.md
 **/djangorestframework/token-authentication.md
 **/djangorestframework/serializers.md
+.vscode
