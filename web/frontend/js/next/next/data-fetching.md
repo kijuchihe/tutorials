@@ -149,20 +149,20 @@ export const getStaticPaths = async () => {
   // Request to get all the data
 
   const articles = await res.json();
-};
 
-// return {
-//   paths: {
-//     params: { id: "1", id: "2"},
-//   },
-// };
+  // return {
+  //   paths: {
+  //     params: { id: "1", id: "2"},
+  //   },
+  // };
 
-// We would like to get something like the above
-const ids = articles.map((article) => article.id);
-const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+  // We would like to get something like the above
+  const ids = articles.map((article) => article.id);
+  const paths = ids.map((id) => ({ params: { id: id.toString() } }));
 
-return {
-  paths,
-  fallback: false,
+  return {
+    paths,
+    fallback: false,
+  };
 };
 ```
