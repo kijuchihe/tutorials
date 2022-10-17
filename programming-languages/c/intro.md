@@ -1,6 +1,16 @@
 # Introduction to C
 
-> Your first program
+## History and Characteristics
+
+- It was designed by Dennis Ritchie in 1972
+- Its extensions are .c and .h
+- It was created to make assembly language much easier to work with
+- It is a procedural language
+- It is one of the fastest programming languages
+- It has handles low level activity very well
+- It was used to create the UNIX OS and RDBMS MYSQL is written in C
+
+## Your first program
 
 ```c
 #include <stdio.h>
