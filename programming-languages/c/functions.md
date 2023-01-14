@@ -5,8 +5,7 @@ is defined, the function can be called when you want the code in the function to
 be used
 
 ```c
-int main()
-{
+int main() {
     return 0;
 }
 ```

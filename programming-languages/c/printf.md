@@ -4,7 +4,7 @@
 
 - "%d" - For printing out a number
 - "%s" - For a string
-- %c - For printing a single character
+- "%c" - For printing a single character
 - "%f" - For printing doubles or deimals
 
 ```c

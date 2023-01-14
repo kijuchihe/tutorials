@@ -1,9 +1,7 @@
 # Getting info from the user
 
 ```c
-
-int main()
-{
+int main() {
     int age;
     printf("Enter your age: ");
     scanf("%d", &age);
@@ -15,8 +13,7 @@ int main()
 > Getting a double
 
 ```c
-int main()
-{
+int main() {
     double gpa;
     printf("Enter your gpa: ");
     scanf("%lf", &gpa);
@@ -28,8 +25,7 @@ int main()
 Getting a character
 
 ```c
-int main()
-{
+int main() {
     char grade;
     printf("Enter your grade: ");
     scanf("%c", &grade);
@@ -41,8 +37,7 @@ int main()
 > Getting a string
 
 ```c
-int main()
-{
+int main() {
     char name[20];
     // You know we've passed in a maximum value
     printf("Enter your name: ");
@@ -55,8 +50,7 @@ int main()
 ```
 
 ```c
-int main()
-{
+int main() {
     char name[20];
     // You know we've passed in a maximum value
     printf("Enter your name: ");
@@ -72,8 +66,7 @@ int main()
 > length of the data and the number of data that is going to be passed in
 
 ```c
-int main()
-{
+int main() {
     char firstName[20];
     char lastName[20];
     printf("Enter your name: ");
