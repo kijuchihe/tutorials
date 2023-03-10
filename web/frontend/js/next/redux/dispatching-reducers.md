@@ -2,7 +2,7 @@
 
 To be able to update the state of the store, we will use a dispatch function
 
-```js
+```jsx
 import { useDispatch } from "react-redux";
 import { update } from "../userSlice";
 const Update = () => {
