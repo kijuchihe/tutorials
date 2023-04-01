@@ -69,7 +69,7 @@ Now sync your database for the first time:
 python manage.py migrate
 ```
 
-We'll also create an initial user named admin with a password of password123.
+We'll also create an initial user named admin with a password of `password123`.
 We'll authenticate as that user later in our example.
 
 ```sh
