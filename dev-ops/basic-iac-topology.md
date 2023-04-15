@@ -1,4 +1,4 @@
-### The IaC topology
+# The IaC topology
 
 In a cloud infrastructure, IaC is divided into several typologies:
 
@@ -9,7 +9,7 @@ In a cloud infrastructure, IaC is divided into several typologies:
 
 Let's deep dive into each topology.
 
-#### The deployment and provisioning of the infrastructure
+## The deployment and provisioning of the infrastructure
 
 Provisioning is the act of instantiating the resources that make up the
 infrastructure. They can be of the Platform as a Service (PaaS) and serverless
@@ -24,7 +24,7 @@ Deployment Manager. Of course, there are many more, but it is difficult to
 mention them all. In this book, we will look at, in detail, the use of Terraform
 to provide an infrastructure.
 
-#### Server configuration
+## Server configuration
 
 This step concerns the configuration of virtual machines, such as the
 configuration of hardening, directories, disk mounting, network configuration
@@ -46,31 +46,33 @@ There are also many IaC tools for creating server templates, such as aminator
 Here is an example of Packer file code that creates an Ubuntu image with package
 updates:
 
-```
+```sh
 {
-"builders": [{
-"type": "azure-arm",
-"os_type": "Linux",
-"image_publisher": "Canonical",
-"image_offer": "UbuntuServer",
-"image_sku": "16.04-LTS",
-"managed_image_resource_group_name": "demoBook",
-"managed_image_name": "SampleUbuntuImage",
-"location": "West Europe",
-"vm_size": "Standard_DS2_v2"
-}],
-"provisioners": [{
-"execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{
-.Path }}'",
-"inline": [
-"apt-get update",
-"apt-get upgrade -y",
-"/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 &&
-sync"
-],
-"inline_shebang": "/bin/sh -x",
-"type": "shell"
-}]
+  "builders": [
+    {
+      "type": "azure-arm",
+      "os_type": "Linux",
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "16.04-LTS",
+      "managed_image_resource_group_name": "demoBook",
+      "managed_image_name": "SampleUbuntuImage",
+      "location": "West Europe",
+      "vm_size": "Standard_DS2_v2"
+    }
+  ],
+  "provisioners": [
+    {
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "inline": [
+        "apt-get update",
+        "apt-get upgrade -y",
+        "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
+      ],
+      "inline_shebang": "/bin/sh -x",
+      "type": "shell"
+    }
+  ]
 }
 ```
 
@@ -80,7 +82,7 @@ all packages during the creation of the image with the apt-get update command
 and, after this execution, Packer deprovisions the image to delete all user
 information (the provisioners section).
 
-### Immutable infrastructure with containers
+## Immutable infrastructure with containers
 
 Containerization consists of deploying applications in containers instead of
 deploying them in VMs.
@@ -144,7 +146,7 @@ ports:
 We can see in the preceding specification file, the name of the image to deploy
 (ngnix), the port to open (80), and the number of replicas (2).
 
-### IaC best practices
+## IaC best practices
 
 IaC, like software development, requires the implementation of practices and
 processes that allow the evolution and maintenance of the infrastructure code.

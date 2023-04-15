@@ -37,3 +37,77 @@ The master node is simply the brain of the cluster
 The worker node is where all the heavy lifting happens such as running your applications
 
 The master node and the worker node communicate by means of
+
+### Master Node
+
+In the master node, we have several components that make up the control plane
+
+## Running Kubernetes
+
+To run Kubernetes locally,we can use `minikube`
+
+All you need is to have docker and minikbuke and `kubectl` installed
+
+To interact with minikube from our laptop, we will need `kubectl` (kube-control)
+
+## Kubectl
+
+- This is a Kubernetes Command Line Tool
+- It runs commands gains for your cluster
+- Deploy
+- Inspect
+- Edit
+- Debug
+- View Logs
+- ETC
+
+## Creating a cluster with two nodes
+
+```
+minikube start --nodes=2
+```
+
+```sh
+minikube status
+# Result
+minikube
+type: Control Plane # Meaning Master node
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+timeToStop: Nonexistent
+
+minikube-m02
+type: Worker
+host: Running
+kubelet: Running
+```
+
+```sh
+kubectl get nodes
+```
+With the above command, we can get nodes that are available on the system
+
+```sh
+kubectl get pods -A
+```
+The above will list all the pods available
+
+## Pods
+
+A pod is the smallest deployable unit in Kubernetes and not containers.
+
+Within a pod, you will always have one main container which represents your application written in whatever language you wrote it in
+
+Within a pod, you may also have `init containers`. These are executed before the main container
+
+We may also have, `side car containers`. These are containers that support your main containers. Think of proxys for example
+
+We may also `Volumes`. This is how containers share data between them.
+
+The way these containers communicate is using localhost and whatever port they expose. Each port has a unique IP Address. If another pod wants to talk to this pod, it uses the unique IP Address
+
+From the above, we can see that the
+- The smallest deployable unit of docker are containers
+- The

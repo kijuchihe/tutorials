@@ -1,4 +1,4 @@
-## Understanding DevOps
+# Understanding DevOps
 
 The term DevOps was introduced in 2007-2009 by Patrick Debois, Gene Kim, and
 John Willis, and it represents the combination of Development (Dev) and
@@ -20,7 +20,7 @@ following examples:
   (called CI/CD)
 - The implementation and automation of unitary and integration tests, with a
   process focused on Behavior-Driven Design (BDD) or Test-Driven Design (TDD)
-- The implementation of a means of collecting feedback from users
+- The impleWmentation of a means of collecting feedback from users
 - Monitoring applications and infrastructure
 
 The DevOps movement is based on three axes:
@@ -41,7 +41,9 @@ The DevOps movement is based on three axes:
   - Continuous integration and delivery
   - Continuous deployment
   - Continuous monitoring
-  ##### The process
+
+
+##### The process
   `Code -> Continuous Integration -> Deploy -> Monitor -> Plan -> Code`
 
 These phases are carried out cyclically and iteratively throughout the life of
