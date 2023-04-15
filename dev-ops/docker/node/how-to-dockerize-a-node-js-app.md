@@ -40,18 +40,21 @@ Running docker container on your local machine
 
 ```sh
 # docker run flags -mode-flag -p system-port:port-on-docker-container docker-image
-docker run -it -p 5000:3000 node-docker-image
+docker container run -it -p 5000:3000 node-docker-image
 ```
 
 - The `-it` flag will run docker in interactive mode
-- The `-p` flag specifies the port
+- The `-p` flag stands for `--publish` and specifies the port
 - The `5000` port is the port it will be running on in our local machine
 - The `3000` port is the internal port where it will be running inside the container
 
-If we want to run this docker container in the background,we can run the following command
+If we want to run this docker container in the background - that is in detached mode - ,we can run the following command
 
 ```sh
-docker run -d -p 5000:3000 node-docker-image
+docker container run -d -p 5000:3000 node-docker-image
+```
+```sh
+docker container run --detach -p 5000:3000 node-docker-image
 ```
 
 ## To see the running containers
