@@ -36,7 +36,6 @@ benefit from it.
 You can preview the live site on GitHub pages
 [here](https://officialkingsley.github.io/tutorials/)
 
-
 > **Note**: It should be noted however that I will be updating as I learn
 
 Just Incase you like the repository or you have any criticism or contributions,
