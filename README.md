@@ -45,5 +45,6 @@ please feel free to contact me on any of my accounts
 
 - [Twitter](https://twitter.com/kcihemelandu)
 - [LinkedIn](https://linkedin.com/in/kcihemelandu)
+- [Instagram](https://Instagram.com/kcihemelandu)
 
 > I would also really appreciate it if you can give this repository a star
