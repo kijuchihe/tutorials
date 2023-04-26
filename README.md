@@ -9,10 +9,9 @@ is just the site on github. However, later on, we intend to make an actual site.
 - Python/Flask
 - Python/Django
 - Frameworks and Libraries
-  - Python
-    - [Django](./web/backend/python/django/index.md)
-  - JavaScript
-    - [Next.js](./web/frontend/js/next/next/index.md)
+- Docker
+- Linux
+- JavaScript/Next.js
 - [Programming Languages](./programming-languages/index.md)
   - [C](./programming-languages/c/index.md)
   - [CSS](./programming-languages/css/index.md)
@@ -23,10 +22,6 @@ is just the site on github. However, later on, we intend to make an actual site.
 - Programming Technologies
   - [Docker](./docker/index.md)
   - [Linux](./linux/index.md)
-- Sciences
-  - [Chemistry](./chemistry/index.md)
-- Tech Fields
-  - [DevOps](./dev-ops/index.md)
 
 This is a repo where I write about things I learn and things that I would like
 to make reference to. I am also putting it on GitHub because I thing people can
