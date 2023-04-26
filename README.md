@@ -6,6 +6,8 @@ is just the site on github. However, later on, we intend to make an actual site.
 
 ## Tutorials List
 - Data Structures and Algorithms
+- Python/Flask
+- Python/Django
 - Frameworks and Libraries
   - Python
     - [Django](./web/backend/python/django/index.md)
