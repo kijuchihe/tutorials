@@ -5,10 +5,7 @@ lot of concepts and fields. Ranging from programming to sciences. For now, this
 is just the site on github. However, later on, we intend to make an actual site.
 
 ## Tutorials List
-
-- [Algorithms](./algorithms/index.md)
-- [Data Structures](./data-structures/index.md)
-  - [Python Data Structures](./data-structures/python/index.md)
+- Data Structures and Algorithms
 - Frameworks and Libraries
   - Python
     - [Django](./web/backend/python/django/index.md)
