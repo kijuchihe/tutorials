@@ -19,9 +19,6 @@ is just the site on github. However, later on, we intend to make an actual site.
   - [JavaScript](./programming-languages/javascript/index.md)
   - [Python](./programming-languages/python/index.md)
   - [Solidity](./programming-languages/solidity/index.md)
-- Programming Technologies
-  - [Docker](./docker/index.md)
-  - [Linux](./linux/index.md)
 
 This is a repo where I write about things I learn and things that I would like
 to make reference to. I am also putting it on GitHub because I thing people can
