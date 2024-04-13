@@ -56,3 +56,8 @@ Here are some of the things I've installed and I'm probably using
 - Wannapik
 - Open source illustrations kit
 - Absurd Design
+
+
+## Learning
+- Decorators
+- aspect oriented programming
