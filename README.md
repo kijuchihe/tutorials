@@ -36,8 +36,8 @@ please feel free to contact me on any of my accounts
 
 ### My links
 
-- [Twitter](https://twitter.com/kcihemelandu)
-- [LinkedIn](https://linkedin.com/in/kcihemelandu)
-- [Instagram](https://Instagram.com/kcihemelandu)
+- [Twitter](https://twitter.com/kijuchihe)
+- [LinkedIn](https://linkedin.com/in/kijuchihe)
+- [Instagram](https://instagram.com/kijuchihe)
 
 > I would also really appreciate it if you can give this repository a star

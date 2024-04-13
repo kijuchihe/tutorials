@@ -17,3 +17,4 @@ docker/some.md
 **/djangorestframework/token-authentication.md
 **/djangorestframework/serializers.md
 .vscode
+/node_modules
