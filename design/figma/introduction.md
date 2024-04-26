@@ -1,0 +1,98 @@
+# Figma
+
+## Concepts covered
+
+- Shapes
+- Editing shapes
+- Layers
+- Boolean Operations
+  - Union
+  - Subtract
+  - Intersect
+  - Exclude
+- Text
+  - Flatten to convert to svgs or icons
+  - Outline stroke
+- Text inspector
+  - Font
+  - Weight
+  - Line height
+  - letter spacing
+  - Paragraph spacing
+- Text style
+  - Adding text styles (4 dots and then click )
+  - Detaching
+- Constraints and responsive layout
+  - In the constraints, this sets where our reference point to the object is.
+  - Making the background responsive
+    - Choose the rectangle
+    - Choose the contstraints to left and right
+- Auto-Layout
+- Adding images
+  - Adding images to shapes
+  - Drag and drop
+  - Using the fill section
+  - Figma automatically resizes images
+  - Adding gifs
+- Fill section
+  - Solid colors
+  - Linear Gradients
+  - Radial gradients
+- Stroke
+  - Inner stroke
+  - Outer stroke
+- Effects
+  - Blur (blur - v, x - any, y - v/2)
+  - Drop shadow should be same color as object (Drop shadow is the most common)
+  - Background blur: Always opacity of fill/color to 50%
+- Creating custom color styles
+  - Naming it like Primary/Blue, Primary/Blue 500 etc.
+- Masks
+  - Allow you to show a specific section or portion of an image or object
+  - Choose the layer and click the mask icon
+  - Masks apply to all layers above it
+  - Choosing both items and choose mask
+  - To keep your effects, duplicate your rectangle, move the
+- Components
+  - Add auto-layout
+  - Drag and drop components to use
+  - To change the instance of the component:
+    - Just head over to fill section
+    - But if you change the master button, it changes its instances
+  - If you duplicate a master button, make sure to detach it from its instance.
+  - Once you are done editing the duplicate, rename it and click the component button
+- Layout Grids
+  - In the inspector panel (Layout grid sction)
+  - Size - 8 for mobile apps, 10 - webpage
+  - Grid
+  - Columns (12 for webpages)
+    - Right
+    - Left
+    - Stretch
+    - Center (for ultrawide screens)
+  - Rows
+  - Gutter
+- Plugins
+  - On the left
+  - Unsplash for images
+  - Content Reel
+  - Map Maker
+  - Isometric
+  - Vectory 3D
+  - Brand Fetch (logo of a website)
+  - Palette
+  - NB: You can use only one plugin at a time, go to the menu and you see plugins
+- Sharing
+- Prototyping
+  - Adding animations and presentation
+  - On the right click prototype
+  - Select on the object you want to animate from
+  - A circle will appear on the selected element, drag the circle for an arrow to appear.
+  - Under prototype, we have interaction and animation section
+  - Smart animate
+    - Ease in
+  - Prototype settings
+- Multiplayer and Commenting
+- Shortcuts
+  - Question mark (help and resources)
+  - Duplicate - Ctrl + D

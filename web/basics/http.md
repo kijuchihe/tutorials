@@ -77,6 +77,7 @@ HTTP is a stateless protocol and it follows the client-server method. It is buil
 The Open Systems Interconnection (OSI) model describes seven layers that computer systems use to communicate over a network. The modern internet is based on a simpler TCP/IP (4 broad layers(App layer, Transport Layer, Internet, Network Access))
 
 Seven Layers:
+
 1. Physical Layer: Transmits raw bits stream over the physical medium
 2. Data Link Layer: Defines the format of data on the network
 3. Network layer: Decades which physical path the data will take
@@ -92,18 +93,21 @@ A proxy server or proxy is an intermediate program/computer used when navigating
 The user agent is any tool that actson behalf of the user
 
 Proxies may perform
+
 - Caching
 - Relaxing Origin Constraint
 - Authentication
 - Proxy
 
 Features controllable with HTTP:
+
 - Caching
 - Relaxing Origin Constraint
 - Authentication
 - Proxy
 
 ### HTTP FLOW
+
 1. Open TCP connection
 2. Send a HTTP message
 3. Read the response
@@ -111,29 +115,31 @@ Features controllable with HTTP:
 
 ## PROTOCOL
 
-
 ## Things to implement
+
 Cache and chaching db
 Redis - Cache/ E-memory database
 
 ## Things to learn
+
 Packets
 Persist
 Storage - Bucket
-Blur kind of 
+Blur kind of
 Web Agents
 Proxy
 Scoping and Hoisting
 
 ## Learn indepth caching
+
 Cache
 Types off caching
-
 
 Have dolar account
 LSP - Language server Protocol
 
 ## STATUS AND STATUS CODES
+
 100 - 199 -> Information Codes
 200 - 299 -> Success Codes
 300 - 399 -> Redirect

@@ -1,0 +1,90 @@
+# Design Guide
+
+A design guide is a system that can help you to keep your design consistent. It can also accelerate your design process.
+
+There are a lot of things that can be included in your design guide such as
+
+- UI Elements
+  - Buttons
+    - States: All states like: active, inactive, tapped, hover, disabled etc.
+    - Hierarchy:
+    - Placement: Multiple button types can be utilised to represent various emphasis levels
+    - Text buuton: used for less-pronounced actions in dialogs and cards
+    - Contrast
+  - Cards: They display content and actions on a single subject.
+    - Individual: A card cannot be divided into multiple cards
+    - Indepenence: A card does not need to rely on its surounding elements.
+    - Components: A card can optionally have rich media (images, videos), text, butons, icons and thumbnails
+  - Text Fields
+    - Label
+    - Input text
+    - Traling icon (like a cancel button)
+    - Activation indicator
+    - voice input
+    - Dropdown
+  - Sliders
+    - Are used for adjustments
+    - States: Just like button
+    - Adjusting
+    - Quickness
+    - Accessibility
+    - Continuous sliders
+    - Discrete sliders
+  - Dialogs:
+    - Dialogs inform users about criical informaion or even tasks. They also ask users to make a decision or choose between different options (like choose account to login). For instance, dialogs can be used for asking for permission or even choosing from a range of different variables on a slider and so much more.
+    - Hierarchy: Blocks app usage till action done
+    - Visibility: Easily recognisable with a dark overlay on the screen
+    - Straightforward: conveys message in a clear way
+    - Buttons: Using side by side buttons
+  - Chips: These allow users to make selections, trigger actions, enter information etc. Unlike buttons, which should be consistent call to action, chips should appear dynamicaly as a group of multiple interactive elements
+    - States
+    - Relevancy
+    - Compactness
+  - Selection Controls:
+    - Efficiency: Allow for selecting two or more options
+    - Scanabe: Should be recognisable at a glance.
+    - Switchers: Like sliders
+    - Radio buttons
+    - Checkboxes
+  - Tooltips: For informative text when users hover or focus on the element.
+    - Conciseness: Should show brief text
+    - Pairing: Should be close to the text they describe
+    - Transitory: tooltips appear on hover, focus on touch and disappear after a short duration (1.5s)
+  - Charts:
+    - Help users to compare values in a visual way
+    - Visibility: Very visible
+    - Consistency: Charts on carts
+    - Margins: Enough white-space between charts and other elements
+  - Steppers: Show progress through a sequence of logical steps and numbered steps. Sometimes used for navigation.
+    - Sections: Do not embed steppers into other steppers and don't use multiple steppers on one page.
+    - Types:
+      - Editable Steps
+      - Non editable steps
+      - Vertical
+      - Horizontal
+    - Feedback: Provide feedback only when there is long latency between the steps
+  - Lists are a continuous group of images or texts. They are composed of items including primary and secondary actions which are represented by icons and texts
+    - Consistency: Must present icons, texts and actions in a consistent format.
+    - Action: Lists show content in a way that makes it easy to recognise a specific itme
+    - Scannable: Lists should be classified in logical ways that make content easy to scan.
+  - Tables: Are containers that show users different records such as products, prices, status, dates etc. Contains the header row with column names, scrollable and easy to scan. Data usually follows the same pattern
+    - Expandable: To allow the user to evaluate extra information.
+    - Pagination
+    - Fixed Headers
+  - Menus
+    - Shows a list of of choices on a procisional surface. Appears when user interacts with button or actions. Allow users to make selection from multiple options. Take less space than controls
+    - Scannable
+    - Quick: Quick to open and close.
+    - Placement: Appear in front of all UI elements
+  - Navigation
+    - Lateral Navigation
+    - Forward
+    - Reverse
+  - Snackbars: provide concise feedback about an operation through a message at the bottom of the screen.
+    - Brief: They should contain a brief single line of text directly related to the operation performed.
+    - Transient: Snackbars automatically time out. They should disappear quickly
+    - Hierarchy: If the action is important enough to block the app usage, you can use dialogs instead of snackbars. In snackbars, only use one button if it is needed, and not more.
+- Typography
+- Iconography
+- Sizing and spacing
+- Color palettes
