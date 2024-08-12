@@ -1,4 +1,6 @@
-# Best Practices in REST Api
+# API Best Practices
+
+Make sure you only optimise after you've realised that an endpoint has performance issues
 
 Check out [https://github.com/microsoft/api-guidelines](https://github.com/microsoft/api-guidelines)
 
@@ -61,13 +63,17 @@ const setCache = function (req, res, next) {
 app.use(setCache);
 ```
 
-Use something like redis to cache data that is used often
+Use something like `redis` to cache data that is used often
 
 ## Optimisation
 
 - Reducing the number of HTTP requests for getting a piece of data that is very related
 
 For example if you have posts from a specific user, if your data returns the user id, the client will have to
+
+## Avoid N+1 Queries
+
+## Use JSON quick Serialisation
 
 ## Connection Pool
 
@@ -83,6 +89,10 @@ This reduces waiting time
 
 Instead of doing this
 
-> > `Logs => Buffer => flush => Disk`
+> `Logs => Buffer => flush => Disk`
 
 Do this instead:
+
+## Compression of payload
+
+Use brotli algorithm or CDNS like cloudflare
