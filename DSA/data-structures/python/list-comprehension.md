@@ -1,4 +1,4 @@
-# Pthon List Comprehension
+# Python List Comprehension
 
 This involves creating a new list basically using a sort of comprehension or for
 loop or iteration

@@ -98,6 +98,10 @@ function App() {
 
 - useMemo(): This is used to cache the result of a function call (memoisation). It is used to optimise computation costs. You don't want to prematurely optimise performance. So think of this tool as an opt in tool to deal with computations that you know are hurting performance.
 
+> The first reason you'll use Memo is when you are computing arrays or objects
+
+> If you are doing calculations which may be expensive
+
 ```ts
 function App() {
   const [count, setCount] = useState(60);
@@ -110,7 +114,30 @@ function App() {
 }
 ```
 
+```ts
+// This is calculating a number so it doesn't fall into our category of arrays becayse the calculation is a number
+
+// However, the calculation might be costly because we don't know the number of cossts are there and the calculation is therefore expensive.
+
+const total = useMemo(() => {
+  costs.reduce((a, c) => a + c, 0);
+}, [costs]);
+```
+
+```ts
+// A sort is potentially expensive
+const sortedPeople = useMemo(() => {
+  [...people.sort()];
+}, [people]);
+```
+
 - useCallback(): This is used to memoize a whole function. When you create a function in a component, a new function object is created whenever the component is rerendered. Usually this isn't a big deal for performance but sometimes you might want to memoise the function. A typical use case is when you pass a function to multiple child components (especially with big lists). By rapping the component in a useCallback hook, you can prevent the unnecessary rerender of the component because they'll always be using the same function object.
+
+Use cases
+
+> You want to keep your callback from being stale
+
+> You want to retain the referential identiy of the callback
 
 ```ts
 function App() {
@@ -126,6 +153,27 @@ function App() {
     </>
   );
 }
+```
+
+```tsx
+const NameList= () => {
+  const sortedNames = useMemo(()=>{},[])
+
+  return (
+    <div>
+    {sortedNames.map(...)}
+    </div>
+  )
+}
+
+```
+
+```tsx
+const sortFunc = useCallback((a, b) => {
+  // ...
+}, [])
+
+<Namelist names={names} sortFunc={sortFunc}/>
 ```
 
 - useImperativeHandle(): If you build a reusable component library in react, you may need to get access to the underlying dom elements and then forward it so it can be accessed by the consumers of your component library. You can access a native dom element with the useRef hook
