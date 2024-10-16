@@ -22,7 +22,7 @@ int main() {
 }
 ```
 
-Getting a character
+> Getting a character
 
 ```c
 int main() {

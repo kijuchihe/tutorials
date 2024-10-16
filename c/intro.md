@@ -23,6 +23,9 @@ int main()
 }
 ```
 
+> The include statements are from header files
+> `<stdio.h>` is standard io which allows us to use the prinf function
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
